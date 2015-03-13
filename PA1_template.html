@@ -205,11 +205,15 @@ hr {
 
 <p>##Loading and Preprocessing Data</p>
 
-<p>The data for this assignment was downloaded and unzipped from <a href="https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip">Activity Monitoring Data</a> on Fri, Mar  6 2015 10:51:39. The resulting file is named activity.csv.</p>
+<p>The data for this assignment was downloaded from <a href="https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip">Activity Monitoring Data</a> on Fri, Mar  6 2015 10:51:39.</p>
 
-<p>The following R code will load the file into a dataframe and change the data column to a date variable:</p>
+<p>The following R code will unzip the downloaded file, load the file into a dataframe, and change the date column from a character string to a date variable:  </p>
 
-<pre><code class="r">activity &lt;- read.csv(&quot;activity.csv&quot;)
+<pre><code class="r">#fileUrl &lt;- &quot;https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip&quot;
+#download.file(fileUrl, destfile = &quot;./data_activity.zip&quot;, method = &quot;curl&quot;)
+
+unzip(&quot;./data_activity.zip&quot;)
+activity &lt;- read.csv(&quot;activity.csv&quot;)
 activity$date &lt;- as.Date(activity$date)
 </code></pre>
 

@@ -3,10 +3,14 @@ Reproducible Research Peer Assessment 1
 
 ##Loading and Preprocessing Data
 
-The data for this assignment was downloaded and unzipped from [Activity Monitoring Data](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip) on Fri, Mar  6 2015 10:51:39. The resulting file is named activity.csv.
+The data for this assignment was downloaded from [Activity Monitoring Data](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip) on Fri, Mar  6 2015 10:51:39.
 
-The following R code will load the file into a dataframe and change the data column to a date variable:
+The following R code will unzip the downloaded file, load the file into a dataframe, and change the date column from a character string to a date variable:  
 ```{r}
+#fileUrl <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
+#download.file(fileUrl, destfile = "./data_activity.zip", method = "curl")
+
+unzip("./data_activity.zip")
 activity <- read.csv("activity.csv")
 activity$date <- as.Date(activity$date)
 ```
